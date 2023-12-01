@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:votting_app/src/utils/theme/theme.dart';
 import 'package:votting_app/widget/form.dart';
 
 void main() {
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home:   CustomForm(),
     );
