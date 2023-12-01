@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:votting_app/src/utils/theme/theme.dart';
-import 'package:votting_app/widget/form.dart';
+import 'src/features/authentication/screens/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home:   CustomForm(),
+      home:   SplashScreen(),
     );
   }
 }
