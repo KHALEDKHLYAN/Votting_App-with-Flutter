@@ -19,6 +19,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    
     SplashScreenController.find.startAnimation();
 
 
@@ -60,14 +62,12 @@ class SplashScreen extends StatelessWidget {
           Obx(
             () => AnimatedPositioned(
               // top: 0,
-              width: 500,
-              height: 500,
               duration: const Duration(milliseconds: 2400),
               bottom: splashController.animate.value ? 100 : 0,
               child: AnimatedOpacity(
                 duration: const Duration(milliseconds: 2000),
                 opacity: splashController.animate.value ? 1 : 0,
-                child: const Image(image: AssetImage(tSplashImage)),
+                child:  Image(image: AssetImage(tSplashImage), height: size.height*0.5,width: size.height*0.5 ),
               ),
             ),
           ),

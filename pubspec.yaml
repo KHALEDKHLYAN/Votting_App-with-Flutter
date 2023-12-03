@@ -43,6 +43,11 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/on_boarding_images/
     # - assets/images/splash-screen-image.png
     # - assets/images/gym-set-pic.png
 
+  fonts:
+    - family: RobotoCondensed-VariableFont_wght
+      fonts:
+        - asset: assets/fonts/RobotoCondensed-VariableFont_wght.ttf
