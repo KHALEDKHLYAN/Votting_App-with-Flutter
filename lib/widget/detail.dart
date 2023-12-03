@@ -8,34 +8,34 @@ class DetailsClass extends StatelessWidget {
   final String productDescription;
 
   DetailsClass(
-      {Key? key, required this.productName, required this.productDescription})
-      : super(key: key);
+      {super.key, required this.productName, required this.productDescription});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(productName),
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back),
-          ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(productName),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
         ),
-        body: Container(
-          padding: EdgeInsets.all(20.0),
-          child: ListView(
-            children: [
-              generateListTile(Icons.bookmark_added_rounded, productName,
-                  productDescription),
-              generateListTile(Icons.shopping_bag_outlined, "Bag",
-                  "Brown Color Bag with straps"),
-              generateListTile(Icons.chair, "Chair", "Wooden swinging Chair"),
-            ],
-          ),
-        ));
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: ListView(
+          children: [
+            generateListTile(
+                Icons.bookmark_added_rounded, productName, productDescription),
+            generateListTile(Icons.shopping_bag_outlined, "Bag",
+                "Brown Color Bag with straps"),
+            generateListTile(Icons.chair, "Chair", "Wooden swinging Chair"),
+          ],
+        ),
+      ),
+    );
   }
 }
 

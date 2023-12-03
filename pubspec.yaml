@@ -15,13 +15,15 @@ dependencies:
   flutter_native_splash: ^2.3.6
   google_fonts: ^6.1.0
   get: ^4.6.6
+  liquid_swipe: ^3.1.0
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  # flutter_lints: ^2.0.0
   # You might want to remove or comment out one of these flutter_lints entries:
-  # flutter_lints: ^3.0.1
+  flutter_lints: ^3.0.1
 
 flutter_native_splash:
   color: "#ffffff"
@@ -40,6 +42,7 @@ flutter_native_splash:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/splash-top-icon.png
-    - assets/images/splash-screen-image.png
+    - assets/images/
+    # - assets/images/splash-screen-image.png
+    # - assets/images/gym-set-pic.png
 

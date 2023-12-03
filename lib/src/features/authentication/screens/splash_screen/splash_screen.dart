@@ -12,7 +12,7 @@ import 'package:votting_app/src/features/authentication/controls/splash_screen_c
 import 'package:votting_app/src/features/authentication/screens/welcom/welcom_screen.dart';
 
 class SplashScreen extends StatelessWidget {
-  SplashScreen({Key? key}) : super(key: key);
+  SplashScreen({super.key});
 
   final splashController = Get.put(SplashScreenController());
 
@@ -27,6 +27,8 @@ class SplashScreen extends StatelessWidget {
         children: [
           Obx(
             () => AnimatedPositioned(
+              width: 95.0,
+              height: 90.0,
               duration: const Duration(milliseconds: 1600),
               top: splashController.animate.value ? 0 : -30,
               left: splashController.animate.value ? 0 : -30,
@@ -48,8 +50,8 @@ class SplashScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(tAppName, style: Theme.of(context).textTheme.headline3),
-                    Text(tAppTagLine, style: Theme.of(context).textTheme.headline2)
+                    Text(tAppName, style: Theme.of(context).textTheme.bodyMedium, ),
+                    Text(tAppTagLine, style: Theme.of(context).textTheme.bodyMedium)
                   ],
                 ),
               ),
@@ -57,6 +59,9 @@ class SplashScreen extends StatelessWidget {
           ),
           Obx(
             () => AnimatedPositioned(
+              // top: 0,
+              width: 500,
+              height: 500,
               duration: const Duration(milliseconds: 2400),
               bottom: splashController.animate.value ? 100 : 0,
               child: AnimatedOpacity(
@@ -68,6 +73,8 @@ class SplashScreen extends StatelessWidget {
           ),
           Obx(
             () => AnimatedPositioned(
+              width: 100.0,
+              height: 100.0,
               duration: const Duration(milliseconds: 2400),
               bottom: splashController.animate.value ? 60 : 0,
               right: tDefaultSize,
