@@ -24,28 +24,73 @@ class OnBoardingScreen extends StatelessWidget {
             counterText: tOnBoardingCounter1,
             bgColor: tOnBoardingPage1Color,
             height: size.height),
-        Size: size,
+      ),
+      OnBoardingPageWidget(
+        model: OnBoardingModel(
+            image: tOnBoardingImage2,
+            title: tOnBoardingSubTitle2,
+            subTitle: tOnBoardingSubTitle2,
+            counterText: tOnBoardingCounter2,
+            bgColor: tOnBoardingPage2Color,
+            height: size.height),
+      ),
+      OnBoardingPageWidget(
+        model: OnBoardingModel(
+            image: tOnBoardingImage3,
+            title: tOnBoardingSubTitle3,
+            subTitle: tOnBoardingSubTitle3,
+            counterText: tOnBoardingCounter3,
+            bgColor: tOnBoardingPage3Color,
+            height: size.height),
       )
     ];
 
     return Scaffold(
       body: Stack(
+        alignment: Alignment.center,
         children: [
           LiquidSwipe(
-            pages: [
-              OnBoardingPage(Size: size),
-              Container(
-                color: tOnBoardingPage2Color,
-              ),
-              Container(
-                color: tOnBoardingPage3Color,
-              ),
-            ],
+            pages: pages,
+            slideIconWidget: Icon(Icons.arrow_back_ios),
+            enableSideReveal: true,
           ),
+          Positioned(
+            bottom: 60.0,
+            child: OutlinedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                side: BorderSide(color: Colors.black26),
+                shape: CircleBorder(),
+                padding: EdgeInsets.all(20),
+                // ignore: deprecated_member_use
+                onPrimary: Colors.white,
+              ),
+              child: Container(
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: tDarkColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(Icons.arrow_forward_ios),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 50.0,
+            right: 20.0,
+            child: TextButton(
+              onPressed: () {},
+              child: Text(
+                "Skip",
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
 }
+
 
 // ignore: camel_case_types
