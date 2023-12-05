@@ -8,9 +8,9 @@ import 'package:votting_app/src/constansts/text_strings.dart';
 import 'package:votting_app/src/features/authentication/models/model_on_boarding.dart';
 
 class OnBoardingPageWidget extends StatelessWidget {
-    final OnBoardingModel model;
+  final OnBoardingModel model;
 
-  const OnBoardingPageWidget( {
+  const OnBoardingPageWidget({
     super.key,
     // ignore: non_constant_identifier_names
     required this.model,
@@ -18,24 +18,31 @@ class OnBoardingPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
 
-  
     return Container(
       padding: EdgeInsets.all(tDefaultSize),
       color: model.bgColor,
-      child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child:
+          Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        Image(image: AssetImage(model.image), height: size.height * 0.4),
+        Column(
           children: [
-            Image(image: AssetImage(model.image), height: model.height*0.4),
-            Column(
-              children: [
-                Text(model.title,style: TextStyle(fontWeight: FontWeight.bold),),
-                Text(model.subTitle, textAlign: TextAlign.center,),
-              ],
+            Text(
+              model.title,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Text(model.counterText),
-            SizedBox(height: 50.0,)
-          ]),
+            Text(
+              model.subTitle,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+        Text(model.counterText),
+        SizedBox(
+          height: 50.0,
+        )
+      ]),
     );
   }
 }
