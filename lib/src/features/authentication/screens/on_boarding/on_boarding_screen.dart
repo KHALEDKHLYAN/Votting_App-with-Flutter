@@ -1,15 +1,27 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_local_variable, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:votting_app/src/constansts/colors.dart';
 import 'package:votting_app/src/constansts/image_strings.dart';
 import 'package:votting_app/src/constansts/text_strings.dart';
 import 'package:votting_app/src/features/authentication/models/model_on_boarding.dart';
 import 'package:votting_app/src/features/authentication/screens/on_boarding/on_bording_widget.dart';
 
-class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({super.key});
+// ignore: must_be_immutable
+class OnBoardingScreen extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
+  OnBoardingScreen({super.key});
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  final controller = LiquidController();
+
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +63,18 @@ class OnBoardingScreen extends StatelessWidget {
         children: [
           LiquidSwipe(
             pages: pages,
+            onPageChangeCallback: OnPageChangeCallback,
+            liquidController: controller,
             slideIconWidget: Icon(Icons.arrow_back_ios),
             enableSideReveal: true,
           ),
           Positioned(
             bottom: 60.0,
             child: OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                int nextPage = controller.currentPage + 1;
+                controller.animateToPage(page: nextPage);
+              },
               style: ElevatedButton.styleFrom(
                 side: BorderSide(color: Colors.black26),
                 shape: CircleBorder(),
@@ -79,18 +96,33 @@ class OnBoardingScreen extends StatelessWidget {
             top: 50.0,
             right: 20.0,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () => controller.jumpToPage(page: 2),
               child: Text(
                 "Skip",
                 style: TextStyle(color: Colors.grey),
               ),
             ),
-          )
+          ),
+          Positioned(
+            bottom: 10,
+            child: AnimatedSmoothIndicator(
+              activeIndex: controller.currentPage,
+              count: 3,
+              effect: ExpandingDotsEffect(
+                activeDotColor: Color(0xff272727),
+                // dotHeight: 5.0,
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
+
+  void OnPageChangeCallback(int activePageIndex) {
+
+    setState(() {
+    currentPage = activePageIndex;
+    });
+  }
 }
-
-
-// ignore: camel_case_types
