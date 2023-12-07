@@ -44,6 +44,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/on_boarding_images/
+    - assets/images/welcom_screen/
     # - assets/images/splash-screen-image.png
     # - assets/images/gym-set-pic.png
 

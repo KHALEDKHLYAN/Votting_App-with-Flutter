@@ -3,6 +3,10 @@
 const String tAppName = '.Gym App';
 const String tAppTagLine = "Kiki Gym Training App. \nGym Training App";
 
+/* --Generic Text --- */
+const String tLogin = "Log in";
+const String tSignUp = 'Sign Up';
+
 
 /*----- OnBoarding Text ---- */
 
@@ -17,6 +21,9 @@ const String tOnBoardingCounter1 = "1/3";
 const String tOnBoardingCounter2 = "2/3";
 const String tOnBoardingCounter3 = "3/3";
 
+/*  ---- Welcom Screen Text ----- */
+const String tWelcomeTitle = "Build Awesome Apps";
+const String tWelcomeSubTitle  = "Let's Put your creativity in development high way, craft apps that everyone loves";
 
 
 

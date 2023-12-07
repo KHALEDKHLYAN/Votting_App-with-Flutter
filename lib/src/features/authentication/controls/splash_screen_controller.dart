@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,6 +19,6 @@ class SplashScreenController extends GetxController{
     animate.value = true;
     await Future.delayed(const Duration(milliseconds: 5000));
     // Get.to(const WelcomeScreen());
-    Get.to(()=>  OnBoardingScreen());
+    Get.to(()=>  WelcomeScreen());
   }
 }

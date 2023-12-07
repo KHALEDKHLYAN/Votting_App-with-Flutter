@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:votting_app/src/utils/theme/text_theme.dart';
+import 'package:votting_app/src/utils/theme/widgets_theme/elvetedbutton_theme.dart';
+import 'package:votting_app/src/utils/theme/widgets_theme/outlinebutton_theme.dart';
 
 class TAppTheme {
   TAppTheme._();
@@ -13,8 +15,8 @@ class TAppTheme {
     textTheme: TTextTheme.lightTextTheme,
     appBarTheme: AppBarTheme(),
     floatingActionButtonTheme: FloatingActionButtonThemeData(),
-    elevatedButtonTheme:
-        ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
+    elevatedButtonTheme:TElevetedButtonTheme.ligtOutLinedButtonTheme,
+    outlinedButtonTheme: TOutlinedButtonTheme.ligtOutLinedButtonTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -23,6 +25,7 @@ class TAppTheme {
     textTheme: TTextTheme.darkTextTheme,
     appBarTheme: AppBarTheme(),
     floatingActionButtonTheme: FloatingActionButtonThemeData(),
-    elevatedButtonTheme: ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
+    elevatedButtonTheme: TElevetedButtonTheme.darkOutLinedButtonTheme,
+    outlinedButtonTheme: TOutlinedButtonTheme.darkOutLinedButtonTheme,
   );
 }
